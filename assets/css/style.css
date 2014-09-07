@@ -1,0 +1,39 @@
+body {
+    background: #333333;
+    color: #ffffff;
+}
+
+button {
+    margin-top: 13px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+#site-wrapper {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#site-header img {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+
+#loginbox {
+    height: 200px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 35px;
+    border: 1px dashed #cccccc;
+    text-align: center;
+    background: #666666;
+}
+
+#loginbox input[type=text], input[type=password] {
+    margin: 0 auto;
+    width: 300px;
+}
