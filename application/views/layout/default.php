@@ -8,7 +8,8 @@
 	<title></title>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+	<link rel="stylesheet" href="<?= css_url() ?>bootstrap.min.css">
+	<link rel="stylesheet" href="<?= css_url() ?>bootstrap-theme.min.css">
 
 	<?php foreach($cssFiles as $file): ?>
     	<link rel="stylesheet" href="<?= $file;?>">
