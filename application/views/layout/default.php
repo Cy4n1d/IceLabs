@@ -10,13 +10,13 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
 
-	<? foreach($cssFiles as $file): ?>
+	<?php foreach($cssFiles as $file): ?>
     	<link rel="stylesheet" href="<?= $file;?>">
-	<? endforeach;?>
+	<?php endforeach;?>
 
-	<? foreach($css as $style): ?>
+	<?php foreach($css as $style): ?>
     	<style type="text/css"><?= $style;?></style>
-	<? endforeach;?>
+	<?php endforeach;?>
 
 	<link rel="stylesheet" href="<?= css_url() ?>style.css">
 
@@ -34,16 +34,40 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand">IceLabs</a>
+          <a href="/" class="navbar-brand">IceLabs</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Raids <b class="caret"></b></a>
+            <li class="active"><a href="/">News</a></li>
+            <li>
+	          <a href="#">News</a>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Financial <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Donations</a></li>
+	            <li><a href="#">Taxes</a></li>
+	          </ul>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logistics <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Courier</a></li>
+	            <li><a href="#">Past</a></li>
+	          </ul>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">PVE <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="#">Upcoming</a></li>
 	            <li><a href="#">Past</a></li>
+	          </ul>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Production <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Order</a></li>
+	            <li><a href="#">Blueprints</a></li>
 	          </ul>
 	        </li>
           </ul>
@@ -54,7 +78,7 @@
 	          <ul class="dropdown-menu">
 	            <li><a href="#">View</a></li>
 	            <li><a href="#">Edit</a></li>
-	            <li><a href="#">Charachters</a></li>
+	            <li><a href="#">Users</a></li>
 	            <li class="divider"></li>
 	            <li><a href="#">Logout</a></li>
 	          </ul>
@@ -66,7 +90,7 @@
 	
 	<section class="container">
 		
-		<? $this->load->view($view, $data); ?>
+		<?php $this->load->view($view, $data); ?>
 
 	</section>
 
@@ -83,13 +107,13 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <? foreach($scriptFiles as $file): ?>
+    <?php foreach($scriptFiles as $file): ?>
     	<script src="<?= $file;?>"></script>
-	<? endforeach;?>
+	<?php endforeach;?>
 
-	<? foreach($scripts as $script): ?>
+	<?php foreach($scripts as $script): ?>
     	<script type="text/javascript"><?= $script;?></script>
-	<? endforeach;?>
+	<?php endforeach;?>
 </body>
 
 </html>
