@@ -2,10 +2,11 @@
 
 /**
  * Users Controller
+ * 
  * @author b4rb4ross4
  *
  */
-class User extends CI_Controller {
+class User extends IL_Controller {
 	
 	/**
 	 * Give an Overview of the currently logged in User
@@ -36,16 +37,11 @@ class User extends CI_Controller {
     }
     
     /**
-     * Login Action
-     */
-    public function login() {
-
-    }
-    
-    /**
      * Logout Action
      */
     public function logout() {
-
+		$this->load('User_model')->logout();
+		
+		redirect('user', login);
     }
 }

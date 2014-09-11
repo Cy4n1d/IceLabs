@@ -166,6 +166,53 @@ class User_model extends CI_Model {
 		return self;
 	}
 	
+	/**
+	 * Function to login the current user
+	 * 
+	 * @param string $user_name
+	 * @param string $password
+	 * 
+	 * @return boolean
+	 */
+	public function login($user_name, $password) {
+		$this->db
+			->select('id, password, username, email, activated')
+			->from('users')
+			->where('username', $user_name)
+			->limit(1);
+		
+		$query = $this->db->get();
+		
+		if($query->num_rows === 1) {
+			$result = $query->result();
+			
+			if(password_verify($password, $result['password'])) {
+				unset($result['password']);
+				
+				$date = new DateTime();
+				
+				$this->db
+					->where('id', $result['id'])
+					->update('user', ['last_login_at' => $this->helper->get_sql_formatted_date($date)]);
+				
+				$this->session->set_userdata('is_authenticated', TRUE);
+				$this->session->set_userdata('user', $result);
+				
+				return true;
+			}
+		}
+			
+		return false;
+		
+	}
+	
+	/**
+	 * Logout the currently logged in user
+	 */
+	public function logout() {
+		$this->session->set_userdata('is_authenticated', FALSE);
+	}
+	
 	
 	
 	
