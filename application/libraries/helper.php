@@ -1,6 +1,6 @@
 <?php
 
-class Config {
+class Helper {
 	
 	/**
 	 * Return the given date as sql conform string
